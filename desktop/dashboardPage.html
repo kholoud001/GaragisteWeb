@@ -8,10 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 <body>
-    <!-- SideBar Start -->
     <div class = "md:flex hidden bg-[#008080] w-52 h-screen justify-between flex-col fixed">
         <div class = "flex flex-col gap-4 mt-8">
             <div class = "bg-[#009999] h-fit">
@@ -24,7 +22,7 @@
                 </div>
 
                 <div class = "flex items-center flex-col px-4">
-                    <a class = "w-full text-center text-white text-[1.1rem] bg-[#00B3B3] p-2 rounded-lg font-bold" href="dashboardRapport.html"><i class="fa-solid fa-newspaper mr-2"></i>Reports</a>
+                    <a class = "w-full text-center text-white text-[1.1rem] bg-[#00B3B3] p-2 rounded-lg font-bold" href="dashboardRapport.html"><i class="fa-solid fa-newspaper mr-2"></i>Rapports</a>
                 </div>
 
                 <div class = "flex items-center flex-col px-4">
@@ -33,14 +31,14 @@
             </div>
         </div>
         <div class = "bg-[#009999] h-fit flex flex-col justify-center px-4 py-4">
-            <a class = "w-full text-center text-white text-[1.1rem] p-2 bg-[#00B3B3] rounded-lg font-bold" href=""><i class="fa-solid fa-right-from-bracket mr-2"></i>Sign Out</a>
+            <a class = "w-full text-center text-white text-[1.1rem] p-2 bg-[#00B3B3] rounded-lg font-bold" href="../index.html"><i class="fa-solid fa-right-from-bracket mr-2"></i>Se déconnecter</a>
         </div>
     </div>
     <div class = "md:hidden block h-fit bg-[#008080]">
         <div class = "w-full h-full flex items-center justify-center flex-col">
             <div class = "flex flex-row w-full h-full justify-between items-center px-4">
                 <img src="./images/SygmaLogo.png" class = "w-fit pt-4 pb-1" alt="">
-                <a class = "bg-[#009999] h-fit w-fit px-2 py-1 rounded-full text-white text-2xl font-bold" href=""><i class="fa-solid fa-right-from-bracket mr-2"></i>Sign Out</a>
+                <a class = "bg-[#009999] h-fit w-fit px-2 py-1 rounded-full text-white text-2xl font-bold" href="../index.html"><i class="fa-solid fa-right-from-bracket mr-2"></i>Se déconnecter</a>
             </div>
             <div class = "flex flex-row pb-4 gap-2">
                 <a class = "bg-[#009999] px-2 py-1 rounded-full text-white text-2xl font-bold" href="dashboardPage.html"><i class="fa-solid fa-chart-simple mr-2"></i>Dashboard</a>
@@ -49,140 +47,96 @@
             </div>
         </div>
     </div>
-    <!-- SideBar End -->
-
-
     <div class = "p-4 md:ml-52 flex gap-2 flex-col">
         <div class = "flex justify-end">
-            <h1 class = "text-2xl font-bold">Welcome to your dashboard, Yassine!</h1>
+            <h1 class = "text-2xl font-bold">Bienvenue dans ton tableau de bord, Yassine!</h1>
         </div>
-        <!-- Content -->
+
+        <!-- dash Content -->
         <div class="stats shadow mx-8 mt-8">
+  
             <div class="stat">
-                <div class="stat-figure text-[#009999]">
-                    <i class="text-3xl fa-solid fa-car-side"></i>
-                </div>
-                <div class="stat-title">Voitures</div>
-                <div class="stat-value">200</div>
-                <div class="stat-desc">1er Jan - 1er Fev</div>
-                <!-- Names of cars as a table -->
-                <div class="mt-4">
-                    <h3 class="font-bold text-lg mb-4">Nombre de Voitures par marque </h3>
-                    <div class="overflow-x-auto">
+              <div class="stat-figure text-[#009999]">
+                <i class="text-3xl fa-solid fa-car-side"></i>
+              </div>
+              <div class="stat-title">Voitures</div>
+              <div class="stat-value">600</div>
+              <div class="stat-desc"></div>
+
+              <div class="mt-4">
+                <h3 class="font-bold text-lg mb-4">Nombre de Voitures par marque </h3>
+                <div class="overflow-x-auto">
                     <table class="min-w-full bg-white border border-gray-200">
                         <thead class="bg-gray-100">
                         <tr>
-                            <th class="py-2 px-4 border-b">Marque</th>
+                            <th class="py-2 px-4 border-b">Modèle</th>
                             <th class="py-2 px-4 border-b">Nombre de Voitures</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody class=" text-center">
                         <tr>
-                            <td class="border px-4 py-2">BMW</td>
+                            <td class="border px-4 py-2">206+</td>
                             <td class="border px-4 py-2">20</td>
                         </tr>
                         <tr>
-                            <td class="border px-4 py-2">DACIA</td>
-                            <td class="border px-4 py-2">100</td>
+                            <td class="border px-4 py-2">Sandero</td>
+                            <td class="border px-4 py-2">150</td>
                         </tr>
                         <tr>
-                            <td class="border px-4 py-2">Renault</td>
+                            <td class="border px-4 py-2">Clio</td>
                             <td class="border px-4 py-2">50</td>
                         </tr>
                         <tr>
-                            <td class="border px-4 py-2">Peugeot</td>
+                            <td class="border px-4 py-2">Focus</td>
                             <td class="border px-4 py-2">30</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Megane</td>
+                            <td class="border px-4 py-2">40</td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Duster</td>
+                            <td class="border px-4 py-2">120</td>
                         </tr>
                         </tbody>
                     </table>
-                    </div>
+                    
+                    
                 </div>
+
+            </div>
+            
             </div>
             
             <div class="stat">
-            <div class="stat-figure text-[#009999]">
-                <i class="text-3xl fa-solid fa-users"></i>
-            </div>
-            <div class="stat-title">Réparations</div>
-            <div class="stat-value">250</div>
-            <div class="stat-desc">↗︎ 150 (22%)</div>
-            <!-- Chart for finished/not finished repairs -->
-            <div class="mt-4">
-                <h3 class="font-bold text-lg mb-8">Réparations (Finies / Non finies)</h3>
+                <div class="stat-figure text-[#009999]">
+                    <i class="text-3xl fa-solid fa-fas fa-car-burst"></i>
+                  </div>
+              <div class="stat-title">Statistics de reparation</div>
+              <div class="stat-value">80%</div>
+              <div class="stat-desc">En cours 280 (20%) voitures</div>
+              <div class="mt-4">
+                <!-- <h3 class="font-bold text-lg mb-8">Réparations (Finies / Non finies)</h3> -->
                 <canvas id="repairChart"></canvas>
             </div>
             </div>
             
             <div class="stat">
-            <div class="stat-figure text-[#009999]">
-                <i class="text-3xl fa-solid fa-users"></i>
-            </div>
-            <div class="stat-title">Avancement</div>
-            <div class="stat-value">100</div>
-            <div class="stat-desc">↘︎ 90 (14%)</div>
-            <!-- Progress bar chart by car -->
-            <div class="mt-4">
+                <div class="stat-figure text-[#009999]">
+                    <i class="text-3xl fas fa-car"></i>
+                  </div>
+              <div class="stat-title">État d'avancement</div>
+              <div class="stat-value">280</div>
+              <div class="stat-desc"></div>
+              <div class="mt-4">
                 <h3 class="font-bold text-lg">Avancement par Voiture</h3>
                 <canvas id="progressChart"></canvas>
             </div>
             </div>
-        </div>
+            
+          </div>
     </div>
-
-    <script>
-        // Chart.js configuration for repair chart
-        const repairCtx = document.getElementById('repairChart').getContext('2d');
-        const repairChart = new Chart(repairCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Finies', 'Non finies'],
-                datasets: [{
-                    label: 'Réparations',
-                    data: [150, 100],
-                    backgroundColor: ['#4caf50', '#f44336'],
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: false,
-                        text: 'Réparations'
-                    }
-                }
-            }
-        });
-    
-        // Chart.js configuration for progress chart
-        const progressCtx = document.getElementById('progressChart').getContext('2d');
-        const progressChart = new Chart(progressCtx, {
-            type: 'bar',
-            data: {
-                labels: ['BMW', 'Dacia', 'Renault', 'Peugeot'],
-                datasets: [{
-                    label: 'Avancement',
-                    data: [20, 80, 50 , 30],
-                    backgroundColor: '#008080'
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: false,
-                    },
-                    title: {
-                        display: true,
-                        text: 'Avancement par Voiture'
-                    }
-                }
-            }
-        });
-      </script>
-
 </body>
+<script src="./js/chartProgress.js"></script>
+<script src="./js/chartRepairs.js"></script>
 </html>
