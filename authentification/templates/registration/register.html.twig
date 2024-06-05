@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen w-full bg-cover" style="background-image: url('{{ asset('images/login.png') }}');">
+    <div class="h-full flex justify-end mx-12 items-center">
+        <div class="h-max w-80">
+            <div class="bg-[#008080] bg-opacity-75 rounded-lg">
+                <div class="flex flex-col h-auto items-center justify-between px-4 py-2 text-white">
+                    <div class="flex flex-col items-center">
+                        <img src="{{ asset('images/SygmaLogo2.png') }}" alt="">
+
+                        {{ form_start(registrationForm) }}
+                        <div class="bg-[#00A1A1] p-4 flex flex-col gap-4 rounded-lg">
+                            <div class="mb-2">
+                                {{ form_row(registrationForm.email) }}
+                                {{ form_errors(registrationForm.email) }}
+                            </div>
+                            <div class="mb-2">
+                                {{ form_row(registrationForm.plainPassword, {
+                                    label: 'Password'
+                                }) }}
+                                {{ form_errors(registrationForm.plainPassword) }}
+                            </div>
+                        </div>
+
+                        <div class=" mt-4">
+                            <a href="#" class=" underline text-white text-sm">
+                            Forgot password?
+                            </a>
+
+                        </div>
+
+                        <button 
+                        type="submit" 
+                        class="mt-4 bg-[#00A1A1] px-8 py-2 text-white rounded-lg text-xl">
+                        Register
+                        </button>
+                        {{ form_end(registrationForm) }}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-end items-end h-full w-full fixed top-0 z-10">
+        <div class="w-full h-fit bg-[#008080]">
+            <div class="flex justify-between px-4 py-2 items-center">
+                <p class="text-md text-white">© Copyright SYGMA.AI 2024</p>
+                <img src="{{ asset('images/SygmaLogo.png') }}" class="w-1/12" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
