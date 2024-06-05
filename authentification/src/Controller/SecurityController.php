@@ -82,6 +82,7 @@ class SecurityController extends AbstractController
         return $this->render('security/forgot_password.html.twig');
     }
 
+    
     #[Route('/reset-password/{token}', name: 'app_reset_password')]
     public function reset(Request $request, string $token, UsersRepository $userRepository, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $entityManager): Response
     {
