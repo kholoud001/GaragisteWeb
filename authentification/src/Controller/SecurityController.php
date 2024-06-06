@@ -51,6 +51,7 @@ class SecurityController extends AbstractController
 
             if (!$user) {
                 $this->addFlash('danger', 'Email not found.');
+                // dd('Email not found.'); 
                 return $this->redirectToRoute('app_forgot_password_request');
             }
 

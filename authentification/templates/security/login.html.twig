@@ -20,7 +20,7 @@
                     <div class="flex flex-col items-center">
                         <img src="{{ asset('images/SygmaLogo2.png') }}" alt="">
 
-                        <form method="post">
+                        <form id="login-form" method="post">
                             <div class="bg-[#00A1A1] p-4 flex flex-col gap-2 rounded-lg">
                                 {% if error %}
                                     <div class="bg-red-500 text-white p-2 rounded-lg">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -41,12 +41,18 @@
                                     <input type="checkbox" name="_remember_me" class="mr-2"> 
                                     <label for="_remember_me" class="text-white">Remember me</label>
                                 </div>
-
-                                <button type="submit" class="mt-2 bg-[#00A1A1] px-8 py-2 text-white rounded-lg text-xl">Sign in</button>
                             </div>
                         </form>
+
+                        <button 
+                        type="submit" 
+                        form="login-form" 
+                        class="mt-4 bg-[#00A1A1] px-14 py-2 text-white rounded-lg text-xl">
+                        Sign in
+                        </button>
+
                         <div class="mt-4">
-                            <a href="{{ path('app_forgot_password_request') }}" class="underline text-white text-sm">
+                            <a href="{{ path('app_forgot_password_request') }}" class=" underline text-white text-sm">
                                 Forgot password?
                             </a>
                         </div>

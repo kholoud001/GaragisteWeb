@@ -35,7 +35,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Email',
                     'autocomplete' => 'email',
-                    'class' => 'outline-none w-full rounded-lg p-2'
+                    'class' => 'outline-none w-full rounded-lg p-2 text-black'
                 ],
             ])
             ->add('username', TextType::class, [
@@ -57,7 +57,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Username',
                     'autocomplete' => 'username',
-                    'class' => 'outline-none w-full rounded-lg p-2'
+                    'class' => 'outline-none w-full rounded-lg p-2 text-black'
                 ],
             ])
             ->add('cell', TelType::class, [
@@ -66,14 +66,15 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Please enter a cell number',
                     ]),
                     new Regex([
-                        'pattern' => '/^\+?[0-9]{10,15}$/',
-                        'message' => 'Please enter a valid cell number',
+                        // 'pattern' => '/^\+?[0-9]{10,15}$/',
+                         'pattern' => '/^\+212[0-9]{9}$/',
+                         'message' => 'Please enter a valid cell number of this format "+212xxxxxxxxx"',
                     ]),
                 ],
                 'attr' => [
                     'placeholder' => 'Cell number',
                     'autocomplete' => 'tel',
-                    'class' => 'outline-none w-full rounded-lg p-2'
+                    'class' => 'outline-none w-full rounded-lg p-2 text-black'
                 ],
             ])
             ->add('plainPassword', PasswordType::class, [
@@ -81,7 +82,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'autocomplete' => 'new-password',
                     'placeholder' => 'Password',
-                    'class' => 'outline-none w-full rounded-lg p-2'
+                    'class' => 'outline-none w-full rounded-lg p-2 text-black'
                 ],
                 'constraints' => [
                     new NotBlank([
