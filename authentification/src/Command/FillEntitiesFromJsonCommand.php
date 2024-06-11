@@ -21,7 +21,7 @@ class FillEntitiesFromJsonCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('fill:entities') // Set command name here
+            ->setName('fill:entities') 
             ->setDescription('Fill Mark and Model entities from JSON file');
     }
 
@@ -44,8 +44,7 @@ class FillEntitiesFromJsonCommand extends Command
         foreach ($data as $item) {
             $markName = $item['mark'];
             $modelName = $item['model'];
-
-            // Find or create Mark entity
+           
             $mark = $this->entityManager->getRepository(Mark::class)->findOneBy(['name' => $markName]);
             if (!$mark) {
                 $mark = new Mark();
@@ -53,7 +52,6 @@ class FillEntitiesFromJsonCommand extends Command
                 $this->entityManager->persist($mark);
             }
 
-            // Create Model entity and associate it with Mark
             $model = new Model();
             $model->setName($modelName);
             $model->setMark($mark);
