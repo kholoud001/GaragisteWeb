@@ -19,25 +19,30 @@ class RegistrationController extends AbstractController
         $user = new Users();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
-
+    
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
+            // Encode the plain password
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
             );
-
+    
+            // Set the role of the user to "garagiste"
+            $user->setRoles(['ROLE_GARAGISTE']);
+    
+            // The createdAt date will be set automatically by the PrePersist lifecycle callback
+    
             $entityManager->persist($user);
             $entityManager->flush();
-
-
+    
             return $this->redirectToRoute('app_dashboard');
         }
-
+    
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form,
         ]);
     }
+    
 }
