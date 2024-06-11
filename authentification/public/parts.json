@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Plaque immatriculation avant"
+    },
+    {
+        "name": "Pare-choc avant"
+    },
+    {
+        "name": "Feu avant droit"
+    },
+    {
+        "name": "Feu avant gauche"
+    },
+    {
+        "name": "Capot"
+    },
+    {
+        "name": "Pare-brise avant"
+    },
+    {
+        "name": "Aile avant droit"
+    },
+    {
+        "name": "Aile avant gauche"
+    },
+    {
+        "name": "Porte avant droite"
+    },
+    {
+        "name": "Porte avant gauche"
+    },
+    {
+        "name": "Porte arriere droite"
+    },
+    {
+        "name": "Porte arriere gauche"
+    },
+    {
+        "name": "Aile arriere droit"
+    },
+    {
+        "name": "Aile arriere gauche"
+    },
+    {
+        "name": "Pare-brise arriere"
+    },
+    {
+        "name": "Malle"
+    },
+    {
+        "name": "Feu arriere droit"
+    },
+    {
+        "name": "Feu arriere gauche"
+    },
+    {
+        "name": "Pare-choc arriere"
+    },
+    {
+        "name": "Plaque immatriculation arriere"
+    }
+]
