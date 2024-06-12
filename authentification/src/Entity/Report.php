@@ -58,10 +58,7 @@ class Report
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $fiscal_power = null;
 
-    // the collection of models
-    #[ORM\ManyToMany(targetEntity: Model::class)]
-    #[ORM\JoinTable(name: "report_model")]
-    private Collection $models;
+    
 
 
     // the collection of parts
@@ -82,18 +79,33 @@ class Report
     #[ORM\OneToMany(mappedBy: "report", targetEntity: ReportPart::class)]
     private $reportParts;
 
+    // Association to Model
+    #[ORM\ManyToOne(targetEntity: Model::class, inversedBy: "reports")]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Model $model = null;
 
 
-    
-    
 
     public function __construct()
     {
-        $this->models = new ArrayCollection();
         $this->parts = new ArrayCollection();
         $this->reportParts = new ArrayCollection();
 
 
+    }
+
+
+    //model 
+    public function getModel(): ?Model
+    {
+        return $this->model;
+    }
+
+    public function setModel(?Model $model): self
+    {
+        $this->model = $model;
+
+        return $this;
     }
 
     public function getId(): ?int
@@ -255,26 +267,7 @@ class Report
         return $this;
     }
 
-    // Methods to manage the collection of models
-    public function getModels(): Collection
-    {
-        return $this->models;
-    }
-
-    public function addModel(Model $model): self
-    {
-        if (!$this->models->contains($model)) {
-            $this->models[] = $model;
-        }
-        return $this;
-    }
-
-    public function removeModel(Model $model): self
-    {
-        $this->models->removeElement($model);
-        return $this;
-    }
-
+    
     //Methods for the collection of Parts
     public function getParts(): Collection
     {
