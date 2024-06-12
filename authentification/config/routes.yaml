@@ -7,6 +7,10 @@ app_dashboard:
     path: /dashboard
     controller: App\Controller\DashboardController::index
 
+app_report:
+    path: /reports    
+    controller: App\Controller\ReportController::index
+
 app_forgot_password_request:
     path: /forgot-password
     controller: App\Controller\SecurityController::request
