@@ -10,7 +10,10 @@ app_dashboard:
 app_report:
     path: /reports    
     controller: App\Controller\ReportController::index
-
+report_new:
+    path: /report/new
+    controller: App\Controller\ReportController::new
+    methods: [GET, POST]
 app_forgot_password_request:
     path: /forgot-password
     controller: App\Controller\SecurityController::request
