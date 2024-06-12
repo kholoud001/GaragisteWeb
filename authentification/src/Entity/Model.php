@@ -21,7 +21,7 @@ class Model
     private ?Mark $mark = null;
 
     // Add this property to hold the collection of reports
-    #[ORM\ManyToMany(targetEntity: Report::class, mappedBy: "models")]
+    #[ORM\OneToMany(targetEntity: Report::class, mappedBy: "model")]
     private Collection $reports;
 
     public function __construct()
