@@ -1,0 +1,28 @@
+{# templates/report/report_form.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Report{% endblock %}
+
+{% block body %}
+    <h1>Create Report</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.registrationNumber) }}
+    {{ form_row(form.previousRegistration) }}
+    {{ form_row(form.firstRegistration) }}
+    {{ form_row(form.MC_maroc) }}
+    {{ form_row(form.usage) }}
+    {{ form_row(form.owner) }}
+    {{ form_row(form.address) }}
+    {{ form_row(form.validity_end) }}
+    {{ form_row(form.type) }}
+    {{ form_row(form.genre) }}
+    {{ form_row(form.fuel_type) }}
+    {{ form_row(form.chassis_nbr) }}
+    {{ form_row(form.cylinder_nbr) }}
+    {{ form_row(form.fiscal_power) }}
+    {{ form_row(form.model) }}
+    <button type="submit" class="btn btn-primary">Create</button>
+    {{ form_end(form) }}
+{% endblock %}
