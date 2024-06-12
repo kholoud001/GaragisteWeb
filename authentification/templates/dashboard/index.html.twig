@@ -22,12 +22,10 @@
                 </div>
 
                 <div class="flex items-center flex-col px-4">
-                    <a class="w-full text-center text-white text-[1.1rem] bg-[#00B3B3] p-2 rounded-lg font-bold" href="#"><i class="fa-solid fa-newspaper mr-2"></i>Rapports</a>
+                    <a class="w-full text-center text-white text-[1.1rem] bg-[#00B3B3] p-2 rounded-lg font-bold" href="{{ path('app_report') }}"><i class="fa-solid fa-newspaper mr-2"></i>Rapports</a>
                 </div>
 
-                <div class="flex items-center flex-col px-4">
-                    <a class="w-full text-center text-white text-[1.1rem] bg-[#00B3B3] p-2 rounded-lg font-bold" href=""><i class="fa-solid fa-bell mr-2"></i>Notifications</a>
-                </div>
+                
             </div>
         </div>
         <div class="bg-[#009999] h-fit flex flex-col justify-center px-4 py-4">
@@ -52,92 +50,7 @@
         <div class="flex justify-end">
             <h1 class="text-2xl font-bold">Bienvenue dans ton tableau de bord, {{ app.user.username }}!</h1>
         </div>
-
-        <!-- dash Content -->
-        <div class="stats shadow mx-8 mt-8">
-
-            <div class="stat">
-              <div class="stat-figure text-[#009999]">
-                <i class="text-3xl fa-solid fa-car-side"></i>
-              </div>
-              <div class="stat-title">Voitures</div>
-              <div class="stat-value">600</div>
-              <div class="stat-desc"></div>
-
-              <div class="mt-4">
-                <h3 class="font-bold text-lg mb-4">Nombre de Voitures par marque </h3>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full bg-white border border-gray-200">
-                        <thead class="bg-gray-100">
-                        <tr>
-                            <th class="py-2 px-4 border-b">Modèle</th>
-                            <th class="py-2 px-4 border-b">Nombre de Voitures</th>
-                        </tr>
-                        </thead>
-                        <tbody class=" text-center">
-                        <tr>
-                            <td class="border px-4 py-2">206+</td>
-                            <td class="border px-4 py-2">20</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Sandero</td>
-                            <td class="border px-4 py-2">150</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Clio</td>
-                            <td class="border px-4 py-2">50</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Focus</td>
-                            <td class="border px-4 py-2">30</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Megane</td>
-                            <td class="border px-4 py-2">40</td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Duster</td>
-                            <td class="border px-4 py-2">120</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-
-                </div>
-
-            </div>
-
-            </div>
-
-            <div class="stat">
-                <div class="stat-figure text-[#009999]">
-                    <i class="text-3xl fa-solid fa-fas fa-car-burst"></i>
-                  </div>
-              <div class="stat-title">Statistics de reparation</div>
-              <div class="stat-value">80%</div>
-              <div class="stat-desc">En cours 280 (20%) voitures</div>
-              <div class="mt-4">
-                <!-- <h3 class="font-bold text-lg mb-8">Réparations (Finies / Non finies)</h3> -->
-                <canvas id="repairChart"></canvas>
-            </div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-figure text-[#009999]">
-                    <i class="text-3xl fas fa-car"></i>
-                  </div>
-              <div class="stat-title">État d'avancement</div>
-              <div class="stat-value">280</div>
-              <div class="stat-desc"></div>
-              <div class="mt-4">
-                <h3 class="font-bold text-lg">Avancement par Voiture</h3>
-                <canvas id="progressChart"></canvas>
-            </div>
-            </div>
-
-          </div>
     </div>
 </body>
-<script src="{{ asset('./js/chartProgress.js') }}"></script>
-<script src="{{ asset('./js/chartRepairs.js') }}"></script>
+
 </html>
