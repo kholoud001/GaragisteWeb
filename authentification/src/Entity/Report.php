@@ -58,6 +58,18 @@ class Report
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $fiscal_power = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $cartegrise_recto = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $cartegrise_verso = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $permis_recto = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $permis_verso = null;
+
     
 
 
@@ -66,14 +78,7 @@ class Report
     #[ORM\JoinTable(name: "report_part")]
 
 
-    // private Collection $parts;
-
-    // // Additional fields for damage and damage image
-    // #[ORM\Column(type: 'text', nullable: true)]
-    // private ?string $damage;
-
-    // #[ORM\Column(type: 'text', nullable: true)]
-    // private ?string $damageImage;
+    
 
     // Many-to-many relationship with Part through ReportPart
     #[ORM\OneToMany(mappedBy: "report", targetEntity: ReportPart::class)]
@@ -266,6 +271,31 @@ class Report
         $this->fiscal_power = $fiscal_power;
         return $this;
     }
+
+    public function getCartegriseRecto(): ?string
+    {
+        return $this->cartegrise_recto;
+    }
+
+    public function setCartegriseRecto(?string $cartegriseRecto): self
+    {
+        $this->cartegrise_recto = $cartegriseRecto;
+
+        return $this;
+    }
+
+    public function getCartegriseVerso(): ?string
+    {
+        return $this->cartegrise_verso;
+    }
+
+    public function setCartegriseVerso(?string $cartegriseVerso): self
+    {
+        $this->cartegrise_verso = $cartegriseVerso;
+
+        return $this;
+    }
+
 
     
     //Methods for the collection of Parts

@@ -19,6 +19,13 @@ class ReportController extends AbstractController
 
     }
 
+    #[Route('/report/test', name: 'report_test')]
+    public function test(): Response
+    {
+        return $this->render('report/form_test.html.twig');
+
+    }
+
      /**
      * @Route("/report/new", name="report_new", methods={"GET", "POST"})
      */
@@ -38,7 +45,7 @@ class ReportController extends AbstractController
             return $this->redirectToRoute('report_new');
         }
 
-        return $this->render('report/report_file.html.twig', [
+        return $this->render('report/report_form.html.twig', [
             'form' => $form->createView(),
         ]);
     }

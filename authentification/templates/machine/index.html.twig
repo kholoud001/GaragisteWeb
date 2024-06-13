@@ -1,0 +1,114 @@
+{# templates/machine/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Importer carte grise</h1>
+
+    {{ form_start(form, {'attr': {'id': 'form_machine', 'enctype': 'multipart/form-data'}}) }}
+        <div class="mt-4 bg-white p-4 py-8 rounded-lg">
+            <div id="alert-additional-content-5" class="p-4 border border-gray-300 rounded-lg bg-gray-50" role="alert">
+                <div class="flex items-center">
+                    <svg class="flex-shrink-0 w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11 14H8v-1h1v-2H8V8h3v4h1v2Z"/>
+                    </svg>
+                    <h3 class="text-lg font-medium text-gray-800">Information</h3>
+                </div>
+                <div class="mt-2 mb-4 text-sm text-gray-800">
+                    Merci de vérifier toutes les informations avant de soumettre le formulaire.
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-between gap-4">
+                <div class="flex flex-col space-y-2">
+                    <label for="registrationNumber" class="font-bold">Numéro d'immatriculation:</label>
+                    {{ form_widget(form.registrationNumber, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="previousRegistration" class="font-bold">Immatriculation antérieure:</label>
+                    {{ form_widget(form.previousRegistration, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="firstRegistration" class="font-bold">Première mise en circulation:</label>
+                    {{ form_widget(form.firstRegistration, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="MC_maroc" class="font-bold">M.C. au Maroc:</label>
+                    {{ form_widget(form.MC_maroc, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="usage" class="font-bold">Usage:</label>
+                    {{ form_widget(form.usage, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="owner" class="font-bold">Propriétaire:</label>
+                    {{ form_widget(form.owner, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="address" class="font-bold">Adresse:</label>
+                    {{ form_widget(form.address, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="validity_end" class="font-bold">Fin de validité:</label>
+                    {{ form_widget(form.validity_end, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="model" class="font-bold">Modèle:</label>
+                    {{ form_widget(form.model, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="type" class="font-bold">Type:</label>
+                    {{ form_widget(form.type, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="genre" class="font-bold">Genre:</label>
+                    {{ form_widget(form.genre, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="fuel_type" class="font-bold">Type carburant:</label>
+                    {{ form_widget(form.fuel_type, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="chassis_nbr" class="font-bold">N° de châssis:</label>
+                    {{ form_widget(form.chassis_nbr, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="cylinder_nbr" class="font-bold">Nombre de cylindres:</label>
+                    {{ form_widget(form.cylinder_nbr, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <label for="fiscal_power" class="font-bold">Puissance fiscale:</label>
+                    {{ form_widget(form.fiscal_power, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center md:mb-0 mb-4 bg-white shadow-md p-2.5 rounded-lg">
+                <div class="w-40 h-32 flex justify-center items-center flex-col">
+                    <p class="text-sm text-gray-600 mb-4">Recto</p>
+                    <div class="bg-gray-200 border border-black w-full h-full flex justify-center items-center flex-col rounded-lg">
+                        {{ form_widget(form.cartegrise_recto, {'attr': {'class': 'w-full h-full'}}) }}
+                    </div>
+                </div>
+                <div class="w-40 h-32 flex justify-center items-center flex-col">
+                    <p class="text-sm text-gray-600 mb-4">Verso</p>
+                    <div class="bg-gray-200 border border-black w-full h-full flex justify-center items-center flex-col rounded-lg">
+                        {{ form_widget(form.cartegrise_verso, {'attr': {'class': 'w-full h-full'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="font-bold mb-2">Parts and Damages</h2>
+                {{ form_widget(form.reportParts, {'attr': {'class': 'border rounded-lg border-black p-1 font-normal'}}) }}
+            </div>
+        </div>
+
+        <div class="mt-6 flex justify-end space-x-2">
+            <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Submit
+            </button>
+            <button type="reset" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-gray-700 bg-gray-300 shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                Reset
+            </button>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

@@ -14,6 +14,15 @@ report_new:
     path: /report/new
     controller: App\Controller\ReportController::new
     methods: [GET, POST]
+    # Show form
+report_test:
+    path: /report/test
+    controller: App\Controller\ReportController::test
+    methods: [GET, POST]
 app_forgot_password_request:
     path: /forgot-password
     controller: App\Controller\SecurityController::request
+machine_index:
+    path: /machine
+    controller: App\Controller\MachineController::index
+    methods: [GET, POST]

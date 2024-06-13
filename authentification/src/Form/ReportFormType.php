@@ -1,57 +1,39 @@
 <?php
-
 namespace App\Form;
 
-use App\Entity\Model;
-use App\Entity\Report;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Part;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType; 
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Validator\Constraints\File;
 
-class ReportFormType extends AbstractType
+
+class ReportFormType extends AbstractType // Renamed the class
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('registrationNumber', TextType::class)
-            ->add('previousRegistration', TextType::class)
-            ->add('firstRegistration', null, [
-                'widget' => 'single_text',
+            ->add('part', EntityType::class, [
+                'class' => Part::class,
+                'choice_label' => 'name',
+                'label' => 'Part'
             ])
-            ->add('MC_maroc', null, [
-                'widget' => 'single_text',
-            ])
-            ->add('usage', TextType::class)
-            ->add('owner', TextType::class)
-            ->add('address', TextType::class)
-            ->add('validity_end', null, [
-                'widget' => 'single_text',
-            ])
-            ->add('type', TextType::class)
-            ->add('genre', TextType::class)
-            ->add('fuel_type', TextType::class)
-            ->add('chassis_nbr', TextType::class)
-            ->add('cylinder_nbr', TextType::class)
-            ->add('fiscal_power', TextType::class)
-            ->add('model', EntityType::class, [
-                'class' => Model::class,
-                'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('m')
-                        ->orderBy('m.name', 'ASC'); 
-                },
-                'choice_label' => 'name', 
-                'placeholder' => 'Select a Model', 
-            ])
-        ;
+            ->add('damageDescription', TextType::class, ['label' => 'Description du dommage'])
+            ->add('damagePicture', FileType::class, [
+                'label' => 'Photo du dommage',
+                'constraints' => [
+                    new File(['maxSize' => '2048k'])
+                ]
+            ]);
     }
 
-    public function configureOptions(OptionsResolver $resolver): void
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Report::class,
+            // Configure your form options here
         ]);
     }
 }
