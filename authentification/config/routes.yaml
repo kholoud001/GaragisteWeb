@@ -6,7 +6,9 @@ controllers:
 app_dashboard:
     path: /dashboard
     controller: App\Controller\DashboardController::index
-
+# app_login:
+#     path: /login
+#     controlelr: App\Controller\SecurityController:login
 app_report:
     path: /reports    
     controller: App\Controller\ReportController::index
@@ -22,7 +24,11 @@ report_test:
 app_forgot_password_request:
     path: /forgot-password
     controller: App\Controller\SecurityController::request
-machine_index:
-    path: /machine
-    controller: App\Controller\MachineController::index
-    methods: [GET, POST]
+
+app_createReportPage:
+    path: /report/newPart
+    controller: App\Controller\ReportController::newPart
+
+details:
+    path: /report/{slug}
+    controller: App\Controller\ReportController::showDetail

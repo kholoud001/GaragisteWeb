@@ -44,5 +44,16 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form,
         ]);
     }
+
+    public function index(): Response
+    {
+        return $this->render('registration/register.html.twig');
+
+    }
+
+    public function page(): Response
+    {
+        return $this->render('dashboard/reportpage.twig');
+    }
     
 }

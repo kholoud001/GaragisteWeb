@@ -38,7 +38,7 @@ class Report
     private ?string $address = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $validity_end = null;
+    private ?\DateTimeInterface $validityEnd = null;
 
     #[ORM\Column(length: 255)]
     private ?string $type = null;
@@ -197,12 +197,12 @@ class Report
 
     public function getValidityEnd(): ?\DateTimeInterface
     {
-        return $this->validity_end;
+        return $this->validityEnd;
     }
 
-    public function setValidityEnd(\DateTimeInterface $validity_end): self
+    public function setValidityEnd(\DateTimeInterface $validityEnd): self
     {
-        $this->validity_end = $validity_end;
+        $this->validityEnd = $validityEnd;
         return $this;
     }
 
